@@ -11,29 +11,29 @@ package byui.cit260.runningErrandsTheGame.model;
  */
 public class Car {
     
-    private float distance;
-    private float fuel;
-    private float cost;
+    private double distance;
+    private double fuel;
+    private double cost;
     
     public Car(){
         
     }
-    public float getDistance(){
+    public double getDistance(){
         return distance;
     }
-    public void setDistance(float distance){
+    public void setDistance(double distance){
         this.distance = distance;
     }
-    public float getFuel(){
+    public double getFuel(){
         return fuel;
     }
-    public void getFuel(float fuel){
+    public void getFuel(double fuel){
         this.fuel = fuel;
     }
-    public float getCost(){
+    public double getCost(){
         return cost;
     }
-    public void setCost(float cost){
+    public void setCost(double cost){
         this.cost = cost;
     }
 }
