@@ -11,8 +11,8 @@ package byui.cit260.runningErrandsTheGame.control;
  */
 public class MapControl {
     private int location;
-    private float distance;
-    private float money;
+    private double distance;
+    private double money;
     
     public int getLocations()
     {
@@ -22,7 +22,7 @@ public class MapControl {
     {
         this.location = location;
     }
-    public float getDistance()
+    public double getDistance()
     {
         return distance;
     }
@@ -30,7 +30,7 @@ public class MapControl {
     {
         this.distance = distance;
     }
-    public float getMoney()
+    public double getMoney()
     {
         return money;
     }
