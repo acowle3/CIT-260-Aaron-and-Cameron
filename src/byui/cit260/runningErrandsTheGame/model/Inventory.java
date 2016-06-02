@@ -17,10 +17,18 @@ public class Inventory implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
+    private double damage;
+    private double heal;
 
     public Inventory() {
     }
     
+    public double getDamage() {
+        return damage;
+    }
+    public double getHeal(){
+        return heal;
+    }
     
     public String getInventoryType() {
         return inventoryType;
