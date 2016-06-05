@@ -5,6 +5,9 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.model.Player;
+import runningerrandsthegame.RunningErrandsTheGame;
+
 /**
  *
  * @author Dale
@@ -17,6 +20,19 @@ public class GameControl {
     
     public void initializeMap() {
         
+    }
+    
+    public static Player createPlayer(String name){
+        if (name == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        RunningErrandsTheGame.setPlayer(player);
+        
+        return player;
     }
     
 }

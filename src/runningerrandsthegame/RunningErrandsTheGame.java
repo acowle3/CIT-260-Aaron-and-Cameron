@@ -5,6 +5,7 @@
  */
 package runningerrandsthegame;
 
+import byui.cit260.runningErrandsTheGame.model.Game;
 import byui.cit260.runningErrandsTheGame.model.Player;
 
 /**
@@ -13,9 +14,22 @@ import byui.cit260.runningErrandsTheGame.model.Player;
  */
 public class RunningErrandsTheGame {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+    public static void setCurrentGame(Game currentGame) {
+        RunningErrandsTheGame.currentGame = currentGame;
+    }
+    public static Player getPlayer() {
+        return player;
+    }
+    public static void setPlayer (Player player) {
+        RunningErrandsTheGame.player = player;
+    }
+    
     public static void main(String[] args) {
         Player playerOne = new Player();
         
