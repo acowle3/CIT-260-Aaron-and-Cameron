@@ -12,7 +12,7 @@ import runningerrandsthegame.RunningErrandsTheGame;
  *
  * @author Dale
  */
-class MainMenuView {
+public class MainMenuView {
     private String menu;
     
     public MainMenuView() {

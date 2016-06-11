@@ -9,7 +9,7 @@ package byui.cit260.runningErrandsTheGame.view;
  *
  * @author Dale
  */
-class GameMenuView {
+public class GameMenuView {
 
     void displayMenu() {
         System.out.println("\n*** displayMenu stub function called ***");

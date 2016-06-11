@@ -17,6 +17,10 @@ public class StartProgramView {
 
     private String promptMessage;
     
+    public StartProgramView(){
+        this.promptMessage = "\nPlease enter your name: ";
+        this.displayBanner();
+    }
     public void displayStartProgamView(){
         boolean done = false;
         do {
@@ -82,5 +86,9 @@ public class StartProgramView {
         MainMenuView mainMenuView = new MainMenuView();
         
         mainMenuView.displayMainMenuView();
+    }
+
+    private void displayBanner() {
+        System.out.println("Game is currently under construction");
     }
 }

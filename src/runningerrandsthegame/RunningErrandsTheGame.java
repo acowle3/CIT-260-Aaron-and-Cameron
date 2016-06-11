@@ -7,7 +7,7 @@ package runningerrandsthegame;
 
 import byui.cit260.runningErrandsTheGame.model.Game;
 import byui.cit260.runningErrandsTheGame.model.Player;
-
+import byui.cit260.runningErrandsTheGame.view.StartProgramView;
 /**
  *
  * @author Aaron
@@ -32,6 +32,8 @@ public class RunningErrandsTheGame {
     
     public static void main(String[] args) {
         Player playerOne = new Player();
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgamView();
         
         playerOne.setName("fred flintstone");
         playerOne.setBestTime(7.00);
