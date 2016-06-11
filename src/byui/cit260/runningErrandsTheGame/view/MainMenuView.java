@@ -56,11 +56,15 @@ public class MainMenuView {
                 break;
             case "G":
                 this.startExistingGame();
+                break;
             case "H":
                 this.displayHelpMenu();
+                break;
             case "S":
                 this.saveGame();
                 break;
+            case "Q":
+                return true;
             default:
                 System.out.println("\n*** Invalid slection *** Try again");
                 break;
