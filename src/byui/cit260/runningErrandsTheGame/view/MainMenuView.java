@@ -6,6 +6,7 @@
 package byui.cit260.runningErrandsTheGame.view;
 
 import byui.cit260.runningErrandsTheGame.control.GameControl;
+import java.util.Scanner;
 import runningerrandsthegame.RunningErrandsTheGame;
 
 /**
@@ -42,8 +43,22 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() function called ***");
-        return "N";
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid) {
+            System.out.println("\n" + this.menu);
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if (value.length() < 1) {
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+            break;
+        }
+        return value;
     }
 
     private boolean doAction(String choice) {
