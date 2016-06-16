@@ -5,7 +5,7 @@
  */
 package cit260.runningErrandsTheGame.control;
 
-import byui.cit260.runningErrandsTheGame.model.Player;
+import cit260.runningErrandsTheGame.model.Player;
 import runningerrandsthegame.RunningErrandsTheGame;
 
 /**

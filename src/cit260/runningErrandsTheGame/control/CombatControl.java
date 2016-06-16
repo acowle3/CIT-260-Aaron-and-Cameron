@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package cit260.runningErrandsTheGame.control;
-import byui.cit260.runningErrandsTheGame.model.Inventory;
+import cit260.runningErrandsTheGame.model.Inventory;
 /**
  *
  * @author Dale

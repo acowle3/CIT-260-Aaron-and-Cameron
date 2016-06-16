@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.runningErrandsTheGame.view;
+package cit260.runningErrandsTheGame.view;
 
 import cit260.runningErrandsTheGame.control.GameControl;
-import byui.cit260.runningErrandsTheGame.model.Player;
+import cit260.runningErrandsTheGame.model.Player;
 import java.util.Scanner;
 
 /**

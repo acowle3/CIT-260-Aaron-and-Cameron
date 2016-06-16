@@ -5,9 +5,9 @@
  */
 package runningerrandsthegame;
 
-import byui.cit260.runningErrandsTheGame.model.Game;
-import byui.cit260.runningErrandsTheGame.model.Player;
-import byui.cit260.runningErrandsTheGame.view.StartProgramView;
+import cit260.runningErrandsTheGame.model.Game;
+import cit260.runningErrandsTheGame.model.Player;
+import cit260.runningErrandsTheGame.view.StartProgramView;
 /**
  *
  * @author Aaron
