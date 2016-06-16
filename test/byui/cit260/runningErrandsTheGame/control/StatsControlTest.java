@@ -5,7 +5,6 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
-import cit260.runningErrandsTheGame.control.CarControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
