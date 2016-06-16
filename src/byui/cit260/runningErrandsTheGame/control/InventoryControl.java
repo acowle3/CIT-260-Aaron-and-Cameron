@@ -11,7 +11,18 @@ package byui.cit260.runningErrandsTheGame.control;
  */
 public class InventoryControl {
     
-    public void calcSavingsInterest(){
+        public double calcBond(double invest, double days) {
+        
+        if (invest < 500) {
+		return -1;
+        }
+        if (days < 1 || days > 31) {
+		return -1;
+        }
+        
+        double stock = (invest * 0.1 * days) - (50 * days);
+                
+        return stock; 
         
     }
 }
