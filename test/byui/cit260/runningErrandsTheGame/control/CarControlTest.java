@@ -76,7 +76,7 @@ public class CarControlTest {
         fuelUnits = 6;
         fuelEconomy = 12;
         
-        expResult = -1;
+        expResult = 0;
         
         result = instance.calcDistance(fuelUnits, fuelEconomy);
         

@@ -11,4 +11,18 @@ package byui.cit260.runningErrandsTheGame.control;
  */
 public class StatsControl {
     
+        public double calcTotalHealth(double userAge, double birthMonth) {
+        
+        if (userAge < 1) {
+		return -1;
+        }
+        if (birthMonth < 1 || birthMonth > 12) {
+		return -1;
+        }
+        
+        double totalHealth = (userAge * 3) + birthMonth;
+                
+        return totalHealth; 
+        
+    }
 }
