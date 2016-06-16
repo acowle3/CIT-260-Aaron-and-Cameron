@@ -13,11 +13,11 @@ import runningerrandsthegame.RunningErrandsTheGame;
  *
  * @author Dale
  */
-public class MainMenuView {
+public class MainMenuView extends View{
     private String menu;
     
     public MainMenuView() {
-        this.menu = "\n"
+            super("\n"
                   + "\n---------------------------------------"
                   + "\n| Main Menu                           |"
                   + "\n---------------------------------------"
@@ -26,7 +26,7 @@ public class MainMenuView {
                   + "\nH - Get help on how to play the game"
                   + "\nS - Save game"
                   + "\nQ - Quit"
-                  + "\n---------------------------------------";
+                  + "\n---------------------------------------";)
     }
     
     void displayMainMenuView() {
@@ -92,7 +92,7 @@ public class MainMenuView {
         GameControl.createNewGame(RunningErrandsTheGame.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
