@@ -29,8 +29,7 @@ public class InventoryControlTest {
         
         assertEquals(expResult, result, 0.0001);
         
-        
-        Test
+             
         
     }
 
