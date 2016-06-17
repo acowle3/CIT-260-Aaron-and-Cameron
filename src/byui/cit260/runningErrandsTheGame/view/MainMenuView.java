@@ -26,10 +26,10 @@ public class MainMenuView extends View{
                   + "\nH - Get help on how to play the game"
                   + "\nS - Save game"
                   + "\nQ - Quit"
-                  + "\n---------------------------------------";)
+                  + "\n---------------------------------------");
     }
     
-    void displayMainMenuView() {
+    public void displayMainMenuView() {
         
         boolean done = false;
         do {
