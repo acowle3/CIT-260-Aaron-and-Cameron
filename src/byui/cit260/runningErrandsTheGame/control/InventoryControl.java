@@ -25,4 +25,19 @@ public class InventoryControl {
         return stock; 
         
     }
+        
+        public double calcStock(double invest, double days) {
+        
+        if (invest < 1500) {
+		return -1;
+        }
+        if (days < 1 || days > 31) {
+		return -1;
+        }
+        
+        double stock = (invest * .15 * days) - (100 * days);
+                
+        return stock; 
+    }    
+    
 }
