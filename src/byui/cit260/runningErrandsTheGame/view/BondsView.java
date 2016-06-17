@@ -19,7 +19,27 @@ public class BondsView {
             + "\n---------------------------------------------------------------");
     }
     
-       
+    public boolean doAction(double height, double diameter) {
+        
+        //prompt for the dimensions for the barrel
+
+        InventoryControl inventoryControl = new InventoryControl();
+
+        double bonds = inventoryControl.calcBonds(invest, days);
+        if (invest < 500) {
+           System.out.println("\nThe minimum amount to invest is 500. Please enter a new value."); 
+        }
+        
+            }
+            else {
+                System.out.println("\nBonds investment accepted!" +
+                                   "\nYour total amount earned is " + bonds);
+                Days accumlatedDays = new Days();
+                accumlatedDays.addtotal(invest);
+                designedBarrel.setVolume(bonds);                
+
+                inventoryControl.saveAccumlatedDays(accumlatedDays);
+                return true;     
             }
         }
         return false;  
