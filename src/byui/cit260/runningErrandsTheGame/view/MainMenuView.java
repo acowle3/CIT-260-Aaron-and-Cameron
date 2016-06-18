@@ -13,11 +13,11 @@ import runningerrandsthegame.RunningErrandsTheGame;
  *
  * @author Dale
  */
-public class MainMenuView extends View{
+public class MainMenuView {
     private String menu;
     
     public MainMenuView() {
-            super("\n"
+        this.menu = "\n"
                   + "\n---------------------------------------"
                   + "\n| Main Menu                           |"
                   + "\n---------------------------------------"
@@ -26,14 +26,12 @@ public class MainMenuView extends View{
                   + "\nH - Get help on how to play the game"
                   + "\nS - Save game"
                   + "\nQ - Quit"
-                  + "\n---------------------------------------");
+                  + "\n---------------------------------------";
     }
     
     public void displayMainMenuView() {
-        
         boolean done = false;
         do {
-            
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
@@ -43,6 +41,7 @@ public class MainMenuView extends View{
     }
 
     private String getMenuOption() {
+               
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -61,11 +60,10 @@ public class MainMenuView extends View{
         return value;
     }
 
-    private boolean doAction(String choice) {
+    private boolean doAction(String menuOption) {
+        menuOption = menuOption.toUpperCase();
         
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (menuOption) {
             case "N":
                 this.startNewGame();
                 break;
@@ -78,33 +76,32 @@ public class MainMenuView extends View{
             case "S":
                 this.saveGame();
                 break;
-            case "Q":
-                return true;
             default:
                 System.out.println("\n*** Invalid slection *** Try again");
                 break;
         }
-        
         return false;
     }
 
     private void startNewGame() {
         GameControl.createNewGame(RunningErrandsTheGame.getPlayer());
-        
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
-    }
-
+        gameMenu.display(); }
+        
     private void startExistingGame() {
-        System.out.println("***startExistingGame function called ***");
-    }
-
-    private void displayHelpMenu() {
-        System.out.println("***displayHelpMenu function called ***");
-    }
+        System.out.println("\n*** startExistingGame function called ***");    }
 
     private void saveGame() {
-            System.out.println("***saveGame function called ***");
-    }
+        System.out.println("\n*** saveGame function called ***");    }
     
+    private void displayHelpMenu() {
+        
+        HelpMenuView helpMenuView = new HelpMenuView();
+        
+        helpMenuView.displayHelpMenuView();
+    }
 }
+
+
+
+     

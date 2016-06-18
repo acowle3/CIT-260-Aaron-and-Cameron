@@ -5,6 +5,8 @@
  */
 package byui.cit260.runningErrandsTheGame.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Dale
@@ -14,16 +16,19 @@ public class HelpMenuView {
     
     public HelpMenuView() {
         this.menu = "\n"
-                  + "\n G - What is the goal of the game?"
-                  + "\n M - How to move"
-                  + "\n E - Estimating the amount of resources"
-                  + "\n Q - Quit";
+                  + "\n---------------------------------------"
+                  + "\n| Help Menu                           |"
+                  + "\n---------------------------------------"
+                  + "\nG - What is the goal of the game?"
+                  + "\nM - How to move"
+                  + "\nE - Estimating the amount of resources"
+                  + "\nQ - Quit"
+                  + "\n---------------------------------------";
     }
     
     public void displayHelpMenuView() {
         boolean done = false;
         do {
-            
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
@@ -33,10 +38,25 @@ public class HelpMenuView {
     }
     
     private String getMenuOption() {
-        System.out.println("\n getMenuOption() function called ***");
-        return "G";
+        
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid) {
+            System.out.println("\n" + this.menu);
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if (value.length() < 1) {
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+            }
+            break;
+        }
+        return value;
     }
-    
+   
     private boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
@@ -65,5 +85,9 @@ public class HelpMenuView {
     }
     private void viewInventory() {
         System.out.println("***viewInventory function called ***");
+    }
+
+    void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

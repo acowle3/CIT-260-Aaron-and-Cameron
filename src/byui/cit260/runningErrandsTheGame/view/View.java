@@ -9,11 +9,11 @@ package byui.cit260.runningErrandsTheGame.view;
  *
  * @author spryt_000
  */
-public abstract class View implements ViewInterface {
+public abstract class View extends ViewInterface {
     
     protected String displayMessage; 
     
-    public View() {        
+    public View() {      
     }
     
     public View(String message) {

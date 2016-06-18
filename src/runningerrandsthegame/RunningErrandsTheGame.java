@@ -41,6 +41,6 @@ public class RunningErrandsTheGame {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
-    }
+    } 
     
 }
