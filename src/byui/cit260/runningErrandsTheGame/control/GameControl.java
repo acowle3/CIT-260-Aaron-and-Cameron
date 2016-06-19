@@ -6,6 +6,7 @@
 package byui.cit260.runningErrandsTheGame.control;
 
 import byui.cit260.runningErrandsTheGame.model.Player;
+import byui.cit260.runningErrandsTheGame.view.GameMenuView;
 import runningerrandsthegame.RunningErrandsTheGame;
 
 /**
@@ -15,7 +16,8 @@ import runningerrandsthegame.RunningErrandsTheGame;
 public class GameControl {
     
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();    
     }
     
     public void startNewGame() {

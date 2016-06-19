@@ -85,8 +85,7 @@ public class MainMenuView {
 
     private void startNewGame() {
         GameControl.createNewGame(RunningErrandsTheGame.getPlayer());
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display(); }
+        }
         
     private void startExistingGame() {
         System.out.println("\n*** startExistingGame function called ***");    }
@@ -95,11 +94,8 @@ public class MainMenuView {
         System.out.println("\n*** saveGame function called ***");    }
     
     private void displayHelpMenu() {
-        
         HelpMenuView helpMenuView = new HelpMenuView();
-        
-        helpMenuView.displayHelpMenuView();
-    }
+        helpMenuView.displayHelpMenuView();    }
 }
 
 
