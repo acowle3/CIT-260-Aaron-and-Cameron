@@ -110,7 +110,8 @@ public class GameMenuView {
     }
 
     private void viewFinances() {
-        System.out.println("*** viewFinances function called ***");
+        BondsView bondsView = new BondsView();
+        bondsView.displayBondsView();    
     }
 
     private void viewSaveGame() {

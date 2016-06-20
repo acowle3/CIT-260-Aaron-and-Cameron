@@ -5,6 +5,8 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.view.BondsView;
+
 /**
  *
  * @author Dale
@@ -20,9 +22,9 @@ public class InventoryControl {
 		return -1;
         }
         
-        double stock = (invest * 0.1 * days) - (50 * days);
+        double stocks = (invest * 0.1 * days) - (50 * days);
                 
-        return stock; 
+        return stocks; 
         
     }
         
@@ -39,5 +41,19 @@ public class InventoryControl {
                 
         return stock; 
     }    
+
+    public double calBonds(double invest, double days) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public double calcInvest(double volume) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void saveInvestEarned(BondsView investEarned) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }
