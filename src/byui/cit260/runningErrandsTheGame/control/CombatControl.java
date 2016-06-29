@@ -11,7 +11,7 @@ import byui.cit260.runningErrandsTheGame.model.Inventory;
  */
 public class CombatControl {
     
-    private Inventory weapon;
+    Inventory weapon;
     
     public double calcAttack() {
         
@@ -25,6 +25,22 @@ public class CombatControl {
             return ( weapon.getDamage() - (Math.random() * 0.5) * weapon.getDamage() );
             
         }
+    }
+    
+    public Inventory getWeapon() {
+        return weapon;
+    }
+    
+    public void setWeapon(Inventory weapon) {
+        this.weapon = weapon;
+    }
+
+    public void useInventory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void retreat() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

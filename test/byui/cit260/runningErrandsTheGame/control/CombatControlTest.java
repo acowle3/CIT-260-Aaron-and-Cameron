@@ -24,11 +24,11 @@ public class CombatControlTest {
     public void testCalcAttack() {
         System.out.println("calcAttack");
         CombatControl instance = new CombatControl();
-        double expResult = 0.0;
-        double result = instance.calcAttack();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double testDouble = 32;
+        double expResult = 32;
+        double result = instance.calcAttack(testDouble);
+        assertEquals(expResult, result, 32);
+        
     }
     
 }

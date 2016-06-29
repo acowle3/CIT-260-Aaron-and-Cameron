@@ -15,7 +15,15 @@ public class Game implements Serializable{
     
     private double totalTime;
     private int daysLeft;
-
+    
+    // model layers
+    private Car car;
+    private Characters characters;
+    private Inventory inventory[];
+    private Map map;
+    private Player player;
+    private Purchases purchases;
+    
     public Game() {
     }
     
@@ -36,6 +44,60 @@ public class Game implements Serializable{
         this.daysLeft = daysLeft;
     }
 
+    public Car getCar() {
+        return car;
+    }
+    
+    public void setCar(Car car) {
+        this.car = car;
+    }
+    
+    public Challenges getChallenge() {
+        return challenge;
+    }
+    
+    public void setChallenge(Challenges challenge) {
+        this.challenge = challenge;
+    }
+    
+    public Characters getCharacter() {
+        return characters;
+    }
+    
+    public void setCharacter(Characters characters) {
+        this.characters = characters;
+    }
+    
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+    
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+    
+    public Map getMap[]() {
+        return map;
+    }
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    public Player getPlayer() {
+        return player;
+    }
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    public Purchases getPurchases() {
+        return purchases;
+    }
+    
+    public void setPurchases(Purchases purchases) {
+        this.purchases = purchases;
+    }
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

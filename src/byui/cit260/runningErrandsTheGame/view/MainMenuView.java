@@ -76,6 +76,8 @@ public class MainMenuView {
             case "S":
                 this.saveGame();
                 break;
+            case "Q":
+                this.quitGame();
             default:
                 System.out.println("\n*** Invalid slection *** Try again");
                 break;
@@ -84,7 +86,13 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
+        // create new game
         GameControl.createNewGame(RunningErrandsTheGame.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
+        
         }
         
     private void startExistingGame() {
@@ -96,6 +104,10 @@ public class MainMenuView {
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView();    }
+
+    private void quitGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
 

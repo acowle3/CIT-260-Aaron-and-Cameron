@@ -5,6 +5,8 @@
  */
 package byui.cit260.runningErrandsTheGame.view;
 
+import byui.cit260.runningErrandsTheGame.control.InventoryControl;
+
 /**
  *
  * @author spryt_000
@@ -30,7 +32,7 @@ public class StocksView {
            System.out.println("\nThe minimum amount to invest is 500. Please enter a new value."); 
         }
         
-            }
+            
             else {
                 System.out.println("\nBonds investment accepted!" +
                                    "\nYour total amount earned is " + stocks);
@@ -41,7 +43,7 @@ public class StocksView {
                 inventoryControl.saveAccumlatedDays(accumlatedDays);
                 return true;     
             }
-        }
+        
         return false;  
     }
 }

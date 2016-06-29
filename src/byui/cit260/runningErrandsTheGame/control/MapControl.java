@@ -5,11 +5,21 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.model.Map;
+
 /**
  *
  * @author Dale
  */
 public class MapControl {
+
+    static Map createMap() {
+        Map map = null;
+        
+        System.out.println("\n createMap() called");
+        return map;
+    }
+    
     private int location;
     private double distance;
     private double money;
@@ -33,5 +43,10 @@ public class MapControl {
     public double getMoney()
     {
         return money;
+    }
+    
+    public static void moveActorsToStartingLocation(Map map)
+    {
+        
     }
 }

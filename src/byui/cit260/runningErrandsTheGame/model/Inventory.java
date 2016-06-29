@@ -14,28 +14,25 @@ import java.util.Objects;
  */
 public class Inventory implements Serializable{
     
-    private String inventoryType;
-    private int quantityInStock;
-    private int requiredAmount;
-    private double damage;
-    private double heal;
+    protected String description;
+    protected int quantityInStock;
+    protected int requiredAmount;
+    
 
     public Inventory() {
     }
     
-    public double getDamage() {
-        return damage;
-    }
-    public double getHeal(){
-        return heal;
-    }
+   
     
-    public String getInventoryType() {
-        return inventoryType;
+    
+    
+    
+    public String getDescription() {
+        return description;
     }
 
-    public void setInventoryType(String inventoryType) {
-        this.inventoryType = inventoryType;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getQuantityInStock() {
@@ -57,7 +54,7 @@ public class Inventory implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.inventoryType);
+        hash = 53 * hash + Objects.hashCode(this.description);
         hash = 53 * hash + this.quantityInStock;
         hash = 53 * hash + this.requiredAmount;
         return hash;
@@ -65,7 +62,7 @@ public class Inventory implements Serializable{
 
     @Override
     public String toString() {
-        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "Inventory{" + "inventoryType=" + description + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
     
     @Override
@@ -86,11 +83,16 @@ public class Inventory implements Serializable{
         if (this.requiredAmount != other.requiredAmount) {
             return false;
         }
-        if (!Objects.equals(this.inventoryType, other.inventoryType)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
     }
+
+    public void setReqiredAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
     
