@@ -18,9 +18,10 @@ public enum SceneType {
     bank,
     bankRobbery,
     clothingStore,
-    GiantSpiderGuard,
+    giantSpiderGuard,
     kimJungIlsSecretLair,
-    homeAgain,
-    badEnding;
+    goodEnding,
+    badEnding,
+    badEndingHome;
     
 }

@@ -109,7 +109,7 @@ public class Map implements Serializable {
         bank.setDescription (
                 "Time to cash your check in.  Considering what you have gone through so far, you "
               + "can already predict what's going to happen in a few minutes.");
-        bank.setMapSymbol("BA")
+        bank.setMapSymbol("BA");
         bank.setBlocked(false);
         bank.setTravelTime(344);
         scenes[SceneType.bank.ordinal()] = bank;
@@ -126,8 +126,8 @@ public class Map implements Serializable {
         Scene clothingStore = new Scene();
         clothingStore.setDescription(
                "You never thought that you'd be grateful for this, but have gotten to the most boring "
-              + "errand ever: shopping for some new clothes.  Who is that creepy looking horned guy"
-                "Over there?");
+              + "errand ever: shopping for some new clothes.  Who is that creepy looking horned guy "
+              + "over there?");
         clothingStore.setMapSymbol("CL");
         clothingStore.setBlocked(false);
         clothingStore.setTravelTime(234);
@@ -136,7 +136,7 @@ public class Map implements Serializable {
         Scene giantSpiderAttack = new Scene();
         giantSpiderAttack.setDescription(
                 "After you got done buying clothes, you have struck up a conversation with the "
-              + "demonic looking figure you saw earlier.  He claims to be Beelzabub, or Lord of the "
+              + "demonic looking figure you saw earlier.  He claims to be Beelzebub, or Lord of the "
               + "Flies.  He claims that Hell has frozen over, so he's out buying sweaters.  He "
               + "taunts you, telling you that you have to purchase the expensive jewelry that your "
               + "wife nagged you about that one time.  Also, he asks you to keep an eye out for a "
@@ -144,14 +144,81 @@ public class Map implements Serializable {
               + "necromancer had accidently let him out of Hell.  He also says something about a "
               + "nuke, but you have a hard time believing him.  So what are you going to do now? "
               + "Go home, or take the chance that the father of all lies may be telling the truth "
-              + "this time?  Also, there's a bunch of nasty looking creatures wandering around "
-              + "outside in the darkness.  Thank Heaven for the 2nd Amendment...");
-        giantSpiderAttack.setMapSymbol("SP")
+              + "this time, and take him out?  Also, there's a bunch of nasty looking creatures "
+              + "wandering around outside in the darkness.  Thank Heaven for the 2nd Amendment. If "
+              +  "you can't avoid them, just hope you've got a good AK-47 on your person.");
+        giantSpiderAttack.setMapSymbol("SP");
+        giantSpiderAttack.setBlocked(false);
+        giantSpiderAttack.setTravelTime(234);
+        scenes[SceneType.GiantSpiderGuard.ordinal()] = giantSpiderAttack;
         
+        Scene kimJungIl = new Scene();
+        kimJungIl.setDescription(
+                "Kim Jong il:  So you have evaded my army of zombies, and my spider guard...Do you "
+              + "realize the trouble I went through to break that thing out of the University lab? "
+              + "No matter.  If I accomplish something, at least I shall be able to glass this "
+              + "miserable city off the face of the Earth.  You may send me back to hell if you so "
+              + "desire, but unfortunately for you, you'll still have to figure out the "
+              + "combination to the nuclear C4 I've planted here.  Ehehehehehehehehe.... ");
+        kimJungIl.setMapSymbol("KI");
+        kimJungIl.setBlocked(false);
+        kimJungIl.setTravelTime(323);
+        scenes[SceneType.kimJungIlsSecretLair.ordinal()] = kimJungIl;
+        
+        Scene homeAgain = new Scene();
+        homeAgain.setDescription(
+                "Well, looks like Kim Jong il has been defeated, and your town has been saved.  Just "
+              + "hope that your feminazi wife appreciates the trouble you went through today, and "
+              + "doesn't scream at you for taking too long.  Or for forgetting to buy rocky road "
+              + "ice cream she asked you about.");
+        homeAgain.setMapSymbol("EN");
+        homeAgain.setBlocked(false);
+        homeAgain.setTravelTime(323);
+        scenes[SceneType.goodEnding.ordinal()] = homeAgain;
+        
+        Scene downerEndingHome = new Scene();
+        downerEndingHome.setDescription(
+                "You decide that you've had enough for one day, so you go back to your trailer, and "
+              + "just as you suspect, your wife whines about you forgetting a few things.  Like "
+              + "remembering to buy her favorite ice cream.  Fortunately for you, you don't have to "
+              + "deal with it for very much longer.  You see a blinding flash, and the next moment, "
+              + "you feel a strong burning pain, followed by the strange sensation of your body "
+              + "being vaporized.  You are dead.  The end.");
+        downerEndingHome.setMapSymbol("NU");
+        downerEndingHome.setBlocked(false);
+        downerEndingHome.setTravelTime(234);
+        scenes[SceneType.badEndingHome.ordinal()] = downerEndingHome;
+        
+        Scene downerEndingNuke = new Scene();
+        downerEndingNuke.setDescription(
+                "You have put in an incorrect passcode three times.  And three is a charm.  In "
+              + "the next nanosecond, you see a bright flash, and your body disintegrates as it is "
+              + "engulfed in the thermonuclear fireball.  You are dead.  The end.");
+        downerEndingNuke.setMapSymbol("DE");
+        downerEndingNuke.setBlocked(false);
+        downerEndingNuke.setTravelTime(234);
+        scenes[SceneType.badEnding.ordinal()] = downerEndingNuke;
         
         return scenes;
     }
     
+    private static void assignSceneLocation(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocation();
+        
+        locations[0][0].setScene(scenes[SceneType.trailer.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.library.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.libraryArson.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.groceryStore.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.groceryStoreTerroristAttack.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.bank.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.bankRobbery.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.clothingStore.ordinal()]);
+        locations[0][5].setScene(scenes[SceneType.giantSpiderGuard.ordinal()]);
+        locations[0][6].setScene(scenes[SceneType.kimJungIlsSecretLair.ordinal()]);
+        locations[1][6].setScene(scenes[SceneType.badEnding.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.badEndingHome.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.goodEnding.ordinal()]);
+    }
     
     public String getLocation() {
         return location;

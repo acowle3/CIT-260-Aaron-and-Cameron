@@ -5,13 +5,14 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 import byui.cit260.runningErrandsTheGame.model.Inventory;
+import byui.cit260.runningErrandsTheGame.model.Weapon;
 /**
  *
  * @author Dale
  */
 public class CombatControl {
     
-    Inventory weapon;
+    Weapon weapon;
     
     public double calcAttack() {
         
@@ -31,7 +32,7 @@ public class CombatControl {
         return weapon;
     }
     
-    public void setWeapon(Inventory weapon) {
+    public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
 
