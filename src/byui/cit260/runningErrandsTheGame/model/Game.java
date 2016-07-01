@@ -52,14 +52,7 @@ public class Game implements Serializable{
         this.car = car;
     }
     
-    public Challenges getChallenge() {
-        return challenge;
-    }
-    
-    public void setChallenge(Challenges challenge) {
-        this.challenge = challenge;
-    }
-    
+
     public Characters getCharacter() {
         return characters;
     }
@@ -76,8 +69,8 @@ public class Game implements Serializable{
         this.inventory = inventory;
     }
     
-    public Map getMap[]() {
-        return map;
+    public Map getMap() {
+        return map;Lo
     }
     public void setMap(Map map) {
         this.map = map;

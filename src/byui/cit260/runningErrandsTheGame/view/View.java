@@ -5,6 +5,8 @@
  */
 package byui.cit260.runningErrandsTheGame.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author spryt_000
@@ -26,7 +28,7 @@ public abstract class View extends ViewInterface {
         boolean done = false;
         do {
             
-            String menuOption = this.getMenuOption();
+            String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             
@@ -40,7 +42,7 @@ public abstract class View extends ViewInterface {
         boolean valid = false;
         String value = null;
         
-        while (!valid)
+        while (!valid) {
             
             System.out.println("\n" + this.displayMessage);
         
@@ -54,6 +56,7 @@ public abstract class View extends ViewInterface {
             
             break;
         }
+    }
     @Override 
     public boolean doAction(String value) {
         

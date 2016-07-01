@@ -7,6 +7,7 @@ package byui.cit260.runningErrandsTheGame.model;
 
 import byui.cit260.runningErrandsTheGame.enums.SceneType;
 import java.io.Serializable;
+import byui.cit260.RunningErrandsTheGame.model.Location;
 import java.util.Objects;
 
 /**

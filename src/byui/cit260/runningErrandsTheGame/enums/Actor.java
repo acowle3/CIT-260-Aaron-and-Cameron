@@ -27,26 +27,14 @@ public enum Actor implements Serializable {
     Beelzebub("Hell froze over, so he's buying new sweaters.  Better go buy your wife the expensive jewelery she's always nagging you for."),
     KimJongIl("Zombified dictator of North Korea and all-around crazy psychopath.  Brought back to life after a bit of necromancy gone horribly wrong, and is trying to nuke your city.  Is the final boss of this game");
     
-    private final String name;
     private final String description;
-    private final Point coordinates;
+
     
     Actor(String description) {
         this.description = description;
         coordinates = new Point(1, 1);
     }
 
-    /**
-     *
-     * @return
-     */
-    public String getName() {
-        return name;
-    }
-
-    public Point getCoordinates() {
-        return coordinates;
-    }
 
     public String getDescription() {
         return description;
