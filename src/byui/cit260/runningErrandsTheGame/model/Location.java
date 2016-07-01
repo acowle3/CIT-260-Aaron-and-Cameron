@@ -20,20 +20,13 @@ public class Location implements Serializable {
     private ArrayList<Actor> actors;
     
 
+
     public Location(int row, int column, Scene scene, ArrayList<Actor> actors) {
         this.row = row;
         this.column = column;
         this.visited = false;
         this.scene = scene;
         this.actors = actors;
-    }
-    
-    public static Map createMap() {
-        Map map = new Map(20, 20);
-        Scene[] scenes = createScenes();
-        
-        GameControl.assignsScenesToLocations(map, scenes);
-        return map;
     }
     
 
