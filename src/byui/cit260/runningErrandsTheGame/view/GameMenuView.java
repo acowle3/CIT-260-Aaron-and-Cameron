@@ -5,7 +5,10 @@
  */
 package byui.cit260.runningErrandsTheGame.view;
 
+import byui.cit260.runningErrandsTheGame.model.Game;
+import byui.cit260.runningErrandsTheGame.model.Inventory;
 import java.util.Scanner;
+import runningerrandsthegame.RunningErrandsTheGame;
 
 /**
  *
@@ -24,9 +27,7 @@ public class GameMenuView {
                   + "\nF - Finances"
                   + "\nS - Save Game"
                   + "\nL - Load Game"
-                  + "\nV - View Email"
                   + "\nK - Stats Menu"
-                  + "\nE - View Emails"
                   + "\nH - Help Menu"
                   + "\nQ - Quit Game"
                   + "\n---------------------------------------";
@@ -82,15 +83,9 @@ public class GameMenuView {
             case "L":
                 this.viewLoadGame();
                 break;
-            case "V":
-                this.viewViewEmail();
-                break;
             case "K":
                 this.viewStatsMenu();
                 break;    
-            case "E":
-                this.viewViewEmails();
-                break;
             case "H":
                 this.viewHelpMenu();
                 break;
@@ -106,7 +101,27 @@ public class GameMenuView {
     }
 
     private void viewInventory() {
-        System.out.println("*** viewInventory function called ***");
+        StringBuilder line;
+        
+        Game game = RunningErrandsTheGame.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        System.out.println("\n      INVENTORY");
+        line = new StringBuilder("                                      ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        for(Inventory item : inventory) {
+            line = new StringBuilder("                                      ");
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getRequiredAmount());
+            line.insert(33, item.getQuantityInStock());
+            
+            System.out.println(line.toString());
+        }
+        
     }
 
     private void viewFinances() {
