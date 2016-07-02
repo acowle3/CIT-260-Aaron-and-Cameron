@@ -5,6 +5,7 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.model.Inventory;
 import byui.cit260.runningErrandsTheGame.view.BondsView;
 
 /**
@@ -13,7 +14,27 @@ import byui.cit260.runningErrandsTheGame.view.BondsView;
  */
 public class InventoryControl {
     
-        public double calcBond(double invest, double days) {
+    public void sortByCost(Inventory[] items) {
+        int n = items.length;
+        int k;
+        for (int m = n; m >= 0; m--) {
+            for (int i = 0; i < n - 1; i++) {
+                k = i + 1;
+                if (items.getCost()[i] > items.getCost()[k]) {
+                    int temp;
+                    temp = items.getCost()[i];
+                    items.getCost[i] = items.getCost()[k];
+                    items.getCost()[k] = temp;
+                }
+            }
+            for (int i = 0; i < items.length; i++) {
+                System.out.print(items.getDescription()[i] + " - " + items.getCost()[i] + "\n");
+            }
+            System.out.println("\n");
+        }
+    }
+    
+    public double calcBond(double invest, double days) {
         
         if (invest < 500) {
 		return -1;
@@ -28,7 +49,7 @@ public class InventoryControl {
         
     }
         
-        public double calcStock(double invest, double days) {
+    public double calcStock(double invest, double days) {
         
         if (invest < 1500) {
 		return -1;
