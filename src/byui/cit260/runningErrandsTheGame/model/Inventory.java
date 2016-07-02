@@ -17,13 +17,17 @@ public class Inventory implements Serializable{
     protected String description;
     protected int quantityInStock;
     protected int requiredAmount;
+    protected int cost;
     
 
     public Inventory() {
     }
+
     
    
-    
+    public int getCost(){
+        return cost;
+    }
     
     
     
