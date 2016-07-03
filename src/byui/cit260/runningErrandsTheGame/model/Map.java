@@ -5,9 +5,9 @@
  */
 package byui.cit260.runningErrandsTheGame.model;
 
+
 import byui.cit260.runningErrandsTheGame.enums.SceneType;
 import java.io.Serializable;
-import byui.cit260.RunningErrandsTheGame.model.Location;
 import java.util.Objects;
 
 /**
@@ -151,7 +151,7 @@ public class Map implements Serializable {
         giantSpiderAttack.setMapSymbol("SP");
         giantSpiderAttack.setBlocked(false);
         giantSpiderAttack.setTravelTime(234);
-        scenes[SceneType.GiantSpiderGuard.ordinal()] = giantSpiderAttack;
+        scenes[SceneType.giantSpiderGuard.ordinal()] = giantSpiderAttack;
         
         Scene kimJungIl = new Scene();
         kimJungIl.setDescription(

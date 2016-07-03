@@ -70,7 +70,7 @@ public class Game implements Serializable{
     }
     
     public Map getMap() {
-        return map;Lo
+        return map;
     }
     public void setMap(Map map) {
         this.map = map;

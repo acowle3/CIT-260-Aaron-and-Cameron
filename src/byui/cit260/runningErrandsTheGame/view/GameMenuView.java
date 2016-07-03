@@ -74,9 +74,7 @@ public class GameMenuView {
             case "I":
                 this.viewInventory();
                 break;
-            case "F":
-                this.viewFinances();
-                break;
+
             case "S":
                 this.viewSaveGame();
                 break;
@@ -124,10 +122,6 @@ public class GameMenuView {
         
     }
 
-    private void viewFinances() {
-        BondsView bondsView = new BondsView();
-        bondsView.displayBondsView();    
-    }
 
     private void viewSaveGame() {
         System.out.println("*** viewSaveGame function called ***");

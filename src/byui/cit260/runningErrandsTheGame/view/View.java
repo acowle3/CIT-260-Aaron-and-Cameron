@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author spryt_000
  */
-public abstract class View extends ViewInterface {
+public abstract class View implements ViewInterface {
     
     protected String displayMessage; 
     
@@ -23,7 +23,7 @@ public abstract class View extends ViewInterface {
     }
     
     @Override
-    public void displayHelpMenuView() {
+    public void display() {
         
         boolean done = false;
         do {
@@ -55,11 +55,7 @@ public abstract class View extends ViewInterface {
             }
             
             break;
-        }
-    }
-    @Override 
-    public boolean doAction(String value) {
-        
-        value = value.toUpperCase();
+        }        
+        return value;
     }
 } 

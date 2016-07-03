@@ -9,9 +9,16 @@ package byui.cit260.runningErrandsTheGame.view;
  *
  * @author spryt_000
  */
-public class ViewInterface {
+public interface ViewInterface {
+    
     public void display();
     public String getInput();
-    public boolean doAction(String value);
+    public boolean doAction(Object obj);
+    
+}
+
+
+
+class abc {
     
 }

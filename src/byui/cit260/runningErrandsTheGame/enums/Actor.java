@@ -32,7 +32,7 @@ public enum Actor implements Serializable {
     
     Actor(String description) {
         this.description = description;
-        coordinates = new Point(1, 1);
+    //    coordinates = new Point(1, 1);
     }
 
 
