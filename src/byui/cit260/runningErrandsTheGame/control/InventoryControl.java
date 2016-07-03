@@ -15,22 +15,15 @@ import byui.cit260.runningErrandsTheGame.view.BondsView;
 public class InventoryControl {
     
     public void sortByCost(Inventory[] items) {
-        int n = items.length;
-        int k;
-        for (int m = n; m >= 0; m--) {
-            for (int i = 0; i < n - 1; i++) {
-                k = i + 1;
-                if (items.getCost()[i] > items.getCost()[k]) {
-                    int temp;
-                    temp = items.getCost()[i];
-                    items.getCost[i] = items.getCost()[k];
-                    items.getCost()[k] = temp;
+        Inventory tempItem;
+        for (int i = 0; i < items.length-1; i++) {
+            for (int j = 0; j < items.length-1-i; j++) {
+                if (items[j].getCost() > items[i].getCost()) {
+                    tempItem = items[j];
+                    items[j] = items[j+1];
+                    items[j+1] = tempItem;
                 }
             }
-            for (int i = 0; i < items.length; i++) {
-                System.out.print(items.getDescription()[i] + " - " + items.getCost()[i] + "\n");
-            }
-            System.out.println("\n");
         }
     }
     
