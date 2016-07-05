@@ -17,8 +17,7 @@ public class CombatView {
     private CombatControl combatControl;
     
     public CombatView() {
-        menu = "\nA: to attack"
-                + "\nI: to use inventory item"
+        menu = "\nI: to use inventory item on enemy"
                 + "\nR: to retreat"
                 + "\nE: to quit game";
         
@@ -31,7 +30,7 @@ public class CombatView {
         if (menuOption.toUpperCase().equals("Q"))
             return;
             
-            done = this.doAction(menuOption);
+        done = this.doAction(menuOption);
         }while (!done);
     }
 
@@ -58,11 +57,10 @@ public class CombatView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "A":
-                combatControl.calcAttack();
-                break;
+
             case "I":
-                combatControl.useInventory();
+                listWeapons();
+                getWeaponOption();
                 break;
             case "R":
                 combatControl.retreat();
@@ -74,6 +72,14 @@ public class CombatView {
                 break;
         }
         return false;
+    }
+
+    private void listWeapons() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void getWeaponOption() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
