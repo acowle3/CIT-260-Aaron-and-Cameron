@@ -10,6 +10,7 @@ import byui.cit260.runningErrandsTheGame.model.Player;
 import byui.cit260.runningErrandsTheGame.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 /**
  *
@@ -55,17 +56,15 @@ public class RunningErrandsTheGame {
             RunningErrandsTheGame.outFile = new PrintWriter(System.out, true);
             
             String filePath = "log.txt";
-            RunningErrandsTheGame.logFile = new PrintWriter(C:\Users\Documents\tmp\logfile.txt);
+            RunningErrandsTheGame.logFile = new PrintWriter("C:\\Users\\Documents\\tmp\\logfile.txt");
             
-            StartProgramView startProgramView = new StartProgramView();
+            startProgramView = new StartProgramView();
             startProgramView.display();
-            return;
             
         } catch (Throwable e) {
                 System.out.println("Exception: " + e.toString() +
                                    "\nCause: " + e.getCause() +
                                    "\nMessage: " + e.getMessage()); 
-                e.printStackTrace():;
         }       
         
         finally {
