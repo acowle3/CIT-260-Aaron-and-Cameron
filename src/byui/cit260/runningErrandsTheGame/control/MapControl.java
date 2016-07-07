@@ -5,7 +5,10 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.enums.Actor;
 import byui.cit260.runningErrandsTheGame.model.Map;
+import java.awt.Point;
+import runningerrandsthegame.RunningErrandsTheGame;
 
 /**
  *
@@ -49,4 +52,16 @@ public class MapControl {
     {
         
     }
+    
+    public static int moveActorToLocation(Actor actor, Point coordinates) {
+        Map map = RunningErrandsTheGame.getcurrentgame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow < 0 || newRow >= map.getNoOfRows() ||
+            newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+            throw new MapControlException("Can not move actor to location ")
+                                        + coordinates.x + ", " + coordinate.y
+                                        + " because that location is outside "
+                                        + " the bounds of the map.");
 }

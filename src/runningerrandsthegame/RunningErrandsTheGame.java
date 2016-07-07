@@ -8,6 +8,9 @@ package runningerrandsthegame;
 import byui.cit260.runningErrandsTheGame.model.Game;
 import byui.cit260.runningErrandsTheGame.model.Player;
 import byui.cit260.runningErrandsTheGame.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 /**
  *
  * @author Aaron
@@ -16,6 +19,11 @@ public class RunningErrandsTheGame {
 
     private static Game currentGame = null;
     private static Player player = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader infile = null;
+    
+    private static PrintWriter logFile = null;
     
     public static Game getCurrentGame() {
         return currentGame;
@@ -41,6 +49,65 @@ public class RunningErrandsTheGame {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
-    } 
+        try {
+            RunningErrandsTheGame.infile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            RunningErrandsTheGame.outFile = new PrintWriter(System.out, true);
+            
+            String filePath = "log.txt";
+            RunningErrandsTheGame.logFile = new PrintWriter(C:\Users\Documents\tmp\logfile.txt);
+            
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            return;
+            
+        } catch (Throwable e) {
+                System.out.println("Exception: " + e.toString() +
+                                   "\nCause: " + e.getCause() +
+                                   "\nMessage: " + e.getMessage()); 
+                e.printStackTrace():;
+        }       
+        
+        finally {
+            try {
+                 if (RunningErrandsTheGame.infile != null)
+                     RunningErrandsTheGame.infile.close();
+                
+                 if (RunningErrandsTheGame.outFile != null)
+                     RunningErrandsTheGame.outFile.close();
+                 
+                 if (RunningErrandsTheGame.logFile != null)
+                     RunningErrandsTheGame.logFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+                
+        }
+    }
+        
+
+    public static Object getcurrentgame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-}
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+    public static void setOutFile(PrintWriter outFile) {
+        RunningErrandsTheGame.outFile = outFile;
+    }
+    public static BufferedReader getInFile() {
+        return infile;
+    }
+    public static void setInFile(BufferedReader inFile) {
+        RunningErrandsTheGame.infile = inFile;
+    }
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+    public static void setLogFile(PrintWriter logFile) {
+        RunningErrandsTheGame.logFile = logFile;
+    }
+ }
+
