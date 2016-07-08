@@ -5,6 +5,7 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.view.ErrorView;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -22,8 +23,8 @@ public class StatsControlTest {
      */
     @Test
     public void testCalcTotalHealth() {
-        System.out.println("calcTotalHealth");
-        System.out.println("\tTest case #1");
+        ErrorView.display(this.getClass().getName(),"calcTotalHealth");
+        ErrorView.display(this.getClass().getName(),"\tTest case #1");
         double userAge = 25;
         double birthMonth = 7;
         StatsControl instance = new StatsControl();
@@ -32,7 +33,7 @@ public class StatsControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #2");
+        ErrorView.display(this.getClass().getName(),"\tTest case #2");
         userAge = 12;
         birthMonth = -1;
         expResult = -1;
@@ -40,7 +41,7 @@ public class StatsControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #3");
+        ErrorView.display(this.getClass().getName(),"\tTest case #3");
         userAge = -1;
         birthMonth = 5;
         expResult = -1;
@@ -48,7 +49,7 @@ public class StatsControlTest {
         assertEquals(expResult, result, 0.0);  
         
         
-        System.out.println("\tTest case #4");
+        ErrorView.display(this.getClass().getName(),"\tTest case #4");
         userAge = 18;
         birthMonth = 13;
         expResult = -1;
@@ -56,7 +57,7 @@ public class StatsControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #5");
+        ErrorView.display(this.getClass().getName(),"\tTest case #5");
         userAge = 12;
         birthMonth = 0;
         expResult = -1;
@@ -64,7 +65,7 @@ public class StatsControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #6");
+        ErrorView.display(this.getClass().getName(),"\tTest case #6");
         userAge = 0;
         birthMonth = 5;
         expResult = -1;
@@ -72,7 +73,7 @@ public class StatsControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #7");
+        ErrorView.display(this.getClass().getName(),"\tTest case #7");
         userAge = 99;
         birthMonth = 12;
         expResult = 309;

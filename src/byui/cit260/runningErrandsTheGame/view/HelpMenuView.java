@@ -39,17 +39,16 @@ public class HelpMenuView {
     
     private String getMenuOption() {
         
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            Scanner keyboard = new Scanner("\n" + this.menu);
             value = keyboard.nextLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break;
@@ -71,20 +70,20 @@ public class HelpMenuView {
                 this.viewInventory();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
 
     private void viewGoal() {
-        System.out.println("***viewGoal function called ***");
+        ErrorView.display(this.getClass().getName(),"***viewGoal function called ***");
     }
     private void viewMove() {
-        System.out.println("***viewMove function called ***");
+        ErrorView.display(this.getClass().getName(),"***viewMove function called ***");
     }
     private void viewInventory() {
-        System.out.println("***viewInventory function called ***");
+        ErrorView.display(this.getClass().getName(),"***viewInventory function called ***");
     }
 
     void display() {

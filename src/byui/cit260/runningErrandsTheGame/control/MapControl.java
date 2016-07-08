@@ -19,7 +19,7 @@ public class MapControl {
     static Map createMap() {
         Map map = null;
         
-        System.out.println("\n createMap() called");
+        this.console.println("\n createMap() called");
         return map;
     }
     

@@ -42,17 +42,16 @@ public class MainMenuView {
 
     private String getMenuOption() {
                
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            Scanner keyboard = new Scanner("\n" + this.menu);
             value = keyboard.nextLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break;
@@ -79,7 +78,7 @@ public class MainMenuView {
             case "Q":
                 this.quitGame();
             default:
-                System.out.println("\n*** Invalid slection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid slection *** Try again");
                 break;
         }
         return false;
@@ -96,11 +95,21 @@ public class MainMenuView {
         }
         
     private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");    }
+        ErrorView.display(this.getClass().getName(),"\n*** startExistingGame function called ***");    }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");    }
-    
+        ErrorView.display(this.getClass().getName(), 
+                          "\n\nEnter the file path for file where the game "
+                           + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try { 
+            GameControl.saveGame(RunningErrandsTheGame.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage()):
+        }
+    }    
+        
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView();    }
@@ -108,6 +117,26 @@ public class MainMenuView {
     private void quitGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    private void startSavedGame() {
+        ErrorView.display(this.getClass().getName(),"\n\nEnter the file path for file where the game "
+                                                  + "is to be saved.");
+
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }    
 }
 
 

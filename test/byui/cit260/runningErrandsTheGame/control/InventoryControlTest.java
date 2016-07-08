@@ -19,8 +19,8 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalcBond() {
-        System.out.println("calcBond");
-        System.out.println("\tTest case #1");
+        this.console.println("calcBond");
+        this.console.println("\tTest case #1");
         double invest = 1000;
         double days = 5;
         InventoryControl instance = new InventoryControl();
@@ -29,7 +29,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #2");
+        this.console.println("\tTest case #2");
         invest = 2000;
         days = -1;
         expResult = -1;
@@ -37,7 +37,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #3");
+        this.console.println("\tTest case #3");
         invest = 300;
         days = 5;
         expResult = -1;
@@ -45,7 +45,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #4");
+        this.console.println("\tTest case #4");
         invest = 3000;
         days = 32;
         expResult = -1;
@@ -53,7 +53,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #5");
+        this.console.println("\tTest case #5");
         invest = 5000;
         days = -1;
         expResult = -1;
@@ -61,7 +61,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #6");
+        this.console.println("\tTest case #6");
         invest = 0;
         days = 31;
         expResult = -1;
@@ -69,7 +69,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #7");
+        this.console.println("\tTest case #7");
         invest = 5000;
         days = 31;
         expResult = 13950;
@@ -83,8 +83,8 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalcStock() {
-        System.out.println("calcStock");
-        System.out.println("\tTest case #1");
+        this.console.println("calcStock");
+        this.console.println("\tTest case #1");
         double invest = 2000;
         double days = 3;
         InventoryControl instance = new InventoryControl();
@@ -93,7 +93,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #2");
+        this.console.println("\tTest case #2");
         invest = 3000;
         days = -1;
         expResult = -1;
@@ -101,7 +101,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #3");
+        this.console.println("\tTest case #3");
         invest = 1400;
         days = 5;
         expResult = -1;
@@ -109,7 +109,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #4");
+        this.console.println("\tTest case #4");
         invest = 3000;
         days = 32;
         expResult = -1;
@@ -117,7 +117,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #5");
+        this.console.println("\tTest case #5");
         invest = 10000;
         days = 0;
         expResult = -1;
@@ -125,7 +125,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #6");
+        this.console.println("\tTest case #6");
         invest = 0;
         days = 31;
         expResult = -1;
@@ -133,7 +133,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        System.out.println("\tTest case #7");
+        this.console.println("\tTest case #7");
         invest = 10000;
         days = 31;
         expResult = 43400;

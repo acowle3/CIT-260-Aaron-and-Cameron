@@ -5,6 +5,7 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.view.ErrorView;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -22,7 +23,7 @@ public class CombatControlTest {
      */
     @Test
     public void testCalcAttack() {
-        System.out.println("calcAttack");
+        ErrorView.display(this.getClass().getName(),"calcAttack");
         CombatControl instance = new CombatControl();
         double testDouble = 32;
         double expResult = 32;

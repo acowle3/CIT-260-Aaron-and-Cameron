@@ -35,17 +35,16 @@ public class StartProgramView {
 
     private String getPlayersName() {
         
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            Scanner keyboard = new Scanner("\n" + this.promptMessage);
             value = keyboard.nextLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break;
@@ -55,7 +54,7 @@ public class StartProgramView {
 
     private boolean doAction(String playersName) {
         if (playersName.length() < 2) {
-            System.out.println("\nInvalid players name: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid players name: "
                     + "The name must be greater than one character in length");
             return false;
             
@@ -65,7 +64,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
     
         if(player == null) {
-        System.out.println("\nError creating the player.");
+        ErrorView.display(this.getClass().getName(),"\nError creating the player.");
         return false;
         }
     
@@ -75,7 +74,7 @@ public class StartProgramView {
     }
     
     private void displayNextView(Player player) {
-        System.out.println("\n============================================"
+        ErrorView.display(this.getClass().getName(),"\n============================================"
                           + "\n Welcome to the game " + player.getName()
                           + "\n Prepare to DIE!"
                           + "\n==========================================="
@@ -87,6 +86,10 @@ public class StartProgramView {
     }
 
     private void displayBanner() {
-        System.out.println("Game is currently under construction");
+        ErrorView.display(this.getClass().getName(),"Game is currently under construction");
+    }
+
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

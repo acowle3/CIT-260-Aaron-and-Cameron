@@ -34,6 +34,6 @@ public class PlayerHealthView {
     public void showHealth() {
         String output;
         output = player.getName() + " health: " + health;
-        System.out.print(output);
+        ErrorView.display(this.getClass().getName(),output);
     }
 }

@@ -12,6 +12,10 @@ import byui.cit260.runningErrandsTheGame.model.Player;
 import byui.cit260.runningErrandsTheGame.view.GameMenuView;
 import runningerrandsthegame.RunningErrandsTheGame;
 import byui.cit260.runningErrandsTheGame.enums.Items;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -111,6 +115,37 @@ public class GameControl {
         spoils.setRequiredAmount(1);
         inventory[Items.KimJongIlsCrap.ordinal()] = spoils;
         return inventory;
+    }
+
+    public static void saveGame(Game currentGame, String filePath) {
+            throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage));
+        }
+    }
+    }
+
+    public static void getSavedGame(String filePath) {
+                        throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputSystem(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        RunningErrandsTheGame.setCurrentGame(game);
+    }
     }
     
     public void startNewGame() {

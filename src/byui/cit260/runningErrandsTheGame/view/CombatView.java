@@ -7,7 +7,6 @@ package byui.cit260.runningErrandsTheGame.view;
 
 import byui.cit260.runningErrandsTheGame.control.CombatControl;
 import java.util.Scanner;
-
 /**
  *Edited by Aaron Cowley
  * @author spryt_000
@@ -35,17 +34,16 @@ public class CombatView {
     }
 
     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            Scanner keyboard = new Scanner("\n" + this.menu);
             value = keyboard.nextLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break;
@@ -68,7 +66,7 @@ public class CombatView {
             case "Q":
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

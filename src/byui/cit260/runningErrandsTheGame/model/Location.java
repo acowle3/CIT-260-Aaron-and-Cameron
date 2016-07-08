@@ -5,7 +5,6 @@
  */
 package byui.cit260.RunningErrandsTheGame.model;
 
-import byui.cit260.runningErrandsTheGame.control.GameControl;
 import byui.cit260.runningErrandsTheGame.enums.Actor;
 import java.io.Serializable;
 import java.util.ArrayList;

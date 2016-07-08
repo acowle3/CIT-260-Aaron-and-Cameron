@@ -5,6 +5,7 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.view.ErrorView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,8 +33,8 @@ public class CarControlTest {
      */
     @Test
     public void testCalcDistance() {
-        System.out.println("calcDistance");
-        System.out.println("\tTest case #1");
+        ErrorView.display(this.getClass().getName(),"calcDistance");
+        ErrorView.display(this.getClass().getName(),"\tTest case #1");
         
         double fuelUnits = 3.5;
         double fuelEconomy = 12;
@@ -47,7 +48,7 @@ public class CarControlTest {
         assertEquals(expResult, result, 0.0001);    
         
         
-        System.out.println("\tTest case #2");
+        ErrorView.display(this.getClass().getName(),"\tTest case #2");
         
         fuelUnits = -1;
         fuelEconomy = 12;
@@ -59,7 +60,7 @@ public class CarControlTest {
         assertEquals(expResult, result, 0.0001);  
         
         
-        System.out.println("\tTest case #3");
+        ErrorView.display(this.getClass().getName(),"\tTest case #3");
         
         fuelUnits = 5;
         fuelEconomy = 15;
@@ -71,7 +72,7 @@ public class CarControlTest {
         assertEquals(expResult, result, 0.0001);
         
         
-        System.out.println("\tTest case #4");
+        ErrorView.display(this.getClass().getName(),"\tTest case #4");
         
         fuelUnits = 6;
         fuelEconomy = 12;
@@ -83,7 +84,7 @@ public class CarControlTest {
         assertEquals(expResult, result, 0.0001);
         
         
-        System.out.println("\tTest case #5");
+        ErrorView.display(this.getClass().getName(),"\tTest case #5");
         
         fuelUnits = 0;
         fuelEconomy = 12;
@@ -95,7 +96,7 @@ public class CarControlTest {
         assertEquals(expResult, result, 0.0001);
         
         
-        System.out.println("\tTest case #6");
+        ErrorView.display(this.getClass().getName(),"\tTest case #6");
         
         fuelUnits = 5;
         fuelEconomy = 0;
@@ -107,7 +108,7 @@ public class CarControlTest {
         assertEquals(expResult, result, 0.0001);
         
         
-        System.out.println("\tTest case #7");
+        ErrorView.display(this.getClass().getName(),"\tTest case #7");
         
         fuelUnits = 5;
         fuelEconomy = 12;

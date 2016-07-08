@@ -27,7 +27,7 @@ public class RunningErrands {
         time.setDaysLeft(30);
         
         String timeInfo = time.toString();
-        System.out.println(timeInfo);
+        this.console.println(timeInfo);
         
         Challenges event = new Challenges();
         
@@ -35,7 +35,7 @@ public class RunningErrands {
         event.setObstacle("Book theif sets his eyes on your book");
         
         String eventInfo = event.toString();
-        System.out.println(eventInfo);
+        this.console.println(eventInfo);
         
         Inventory item = new Inventory();
         
@@ -44,7 +44,7 @@ public class RunningErrands {
         item.setRequiredAmount(24);
         
         String itemInfo = item.toString();
-        System.out.println(itemInfo);
+        this.console.println(itemInfo);
         
         Purchases stock = new Purchases();
         
@@ -53,7 +53,7 @@ public class RunningErrands {
         stock.setCost(3.99);
         
         String stockInfo = stock.toString();
-        System.out.println(stockInfo);
+        this.console.println(stockInfo);
         
         Map travel = new Map();
         
@@ -63,7 +63,7 @@ public class RunningErrands {
         travel.setMoney(220.50);
         
         String travelInfo = travel.toString();
-        System.out.println(travelInfo);
+        this.console.println(travelInfo);
         
       
         

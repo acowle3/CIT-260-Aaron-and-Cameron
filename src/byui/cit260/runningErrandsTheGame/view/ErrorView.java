@@ -15,6 +15,7 @@ import runningerrandsthegame.RunningErrandsTheGame;
 public class ErrorView {
     
     private static final PrintWriter errorFile = RunningErrandsTheGame.getOutFile();
+    private static final PrintWriter logFile = RunningErrandsTheGame.getLogFile();
     
     public static void display(String className, String errorMessage) {
         
@@ -22,6 +23,8 @@ public class ErrorView {
                     "---------------------------------------------------------"
                   + "\n- ERROR - " + errorMessage
                   + "\n---------------------------------------------------------");
+        
+        logFile.println(className + " - " + errorMessage);
     }
     
 }

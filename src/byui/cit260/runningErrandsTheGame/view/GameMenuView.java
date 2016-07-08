@@ -46,17 +46,16 @@ public class GameMenuView {
     
     private String getMenuOption() {
         
-        Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            Scanner keyboard = new Scanner("\n" + this.menu);
             value = keyboard.nextLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break;
@@ -88,14 +87,14 @@ public class GameMenuView {
                 this.viewHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
 
     private void viewMap() {
-        System.out.println("*** viewMap function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewMap function called ***");
     }
 
     private void viewInventory() {
@@ -104,12 +103,12 @@ public class GameMenuView {
         Game game = RunningErrandsTheGame.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
-        System.out.println("\n      INVENTORY");
+        ErrorView.display(this.getClass().getName(),"\n      INVENTORY");
         line = new StringBuilder("                                      ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
-        System.out.println(line.toString());
+        ErrorView.display(this.getClass().getName(),line.toString());
         
         for(Inventory item : inventory) {
             line = new StringBuilder("                                      ");
@@ -124,26 +123,30 @@ public class GameMenuView {
 
 
     private void viewSaveGame() {
-        System.out.println("*** viewSaveGame function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewSaveGame function called ***");
     }
 
     private void viewLoadGame() {
-        System.out.println("*** viewLoadGame function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewLoadGame function called ***");
     }
 
     private void viewViewEmail() {
-        System.out.println("*** viewViewEmail function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewViewEmail function called ***");
     }
 
     private void viewStatsMenu() {
-        System.out.println("*** viewStatsMenu function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewStatsMenu function called ***");
     }
 
     private void viewViewEmails() {
-        System.out.println("*** viewViewEmails function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewViewEmails function called ***");
     }
 
     private void viewHelpMenu() {
-        System.out.println("*** viewHelpMenu function called ***");
+        ErrorView.display(this.getClass().getName(),"*** viewHelpMenu function called ***");
+    }
+
+    void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
