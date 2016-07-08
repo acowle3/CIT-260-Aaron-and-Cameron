@@ -48,12 +48,12 @@ public class RunningErrandsTheGame {
         playerOne.setBestTime(7.00);
         
         String playerInfo = playerOne.toString();
-        this.console.println(playerInfo);
+        System.out.println(playerInfo);
         
         try {
             RunningErrandsTheGame.infile =
                     new BufferedReader(new InputStreamReader(System.in));
-            RunningErrandsTheGame.outFile = new PrintWriter(this.console, true);
+            RunningErrandsTheGame.outFile = new PrintWriter(System.out, true);
             
             String filePath = "log.txt";
             RunningErrandsTheGame.logFile = new PrintWriter("C:\\Users\\Documents\\tmp\\logfile.txt");
@@ -62,7 +62,7 @@ public class RunningErrandsTheGame {
             startProgramView.display();
             
         } catch (Throwable e) {
-                this.console.println("Exception: " + e.toString() +
+                System.out.println("Exception: " + e.toString() +
                                    "\nCause: " + e.getCause() +
                                    "\nMessage: " + e.getMessage()); 
         }       
@@ -78,7 +78,7 @@ public class RunningErrandsTheGame {
                  if (RunningErrandsTheGame.logFile != null)
                      RunningErrandsTheGame.logFile.close();
             } catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(),"Error closing files");
+                System.out.println("Error closing files");
                 return;
             }
                 
