@@ -19,8 +19,6 @@ public class Scene implements Serializable {
     private double travelTime;
     private boolean blocked;
    
-    public Scene() {
-    }
 
     public Scene(SceneType sceneType, String description, String mapSymbol, double travelTime, boolean blocked) {
         this.sceneType = sceneType;
@@ -28,6 +26,10 @@ public class Scene implements Serializable {
         this.mapSymbol = mapSymbol;
         this.travelTime = travelTime;
         this.blocked = blocked;
+    }
+
+    Scene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public SceneType getSceneType() {

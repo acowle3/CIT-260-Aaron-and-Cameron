@@ -26,9 +26,6 @@ public class Map implements Serializable {
     private int noOfColumns;
     private Location[][] locations;
     
-    public Map() {
-        
-    }
     
     public Map(int noOfRows, int noOfColumns) {
         if (noOfRows < 1 || noOfColumns < 1) {

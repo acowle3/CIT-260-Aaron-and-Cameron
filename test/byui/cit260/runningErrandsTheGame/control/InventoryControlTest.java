@@ -5,6 +5,7 @@
  */
 package byui.cit260.runningErrandsTheGame.control;
 
+import byui.cit260.runningErrandsTheGame.view.ErrorView;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,8 +20,8 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalcBond() {
-        this.console.println("calcBond");
-        this.console.println("\tTest case #1");
+        ErrorView.display(this.getClass().getName(),"calcBond");
+        ErrorView.display(this.getClass().getName(),"\tTest case #1");
         double invest = 1000;
         double days = 5;
         InventoryControl instance = new InventoryControl();
@@ -29,7 +30,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #2");
+        ErrorView.display(this.getClass().getName(),"\tTest case #2");
         invest = 2000;
         days = -1;
         expResult = -1;
@@ -37,7 +38,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #3");
+        ErrorView.display(this.getClass().getName(),"\tTest case #3");
         invest = 300;
         days = 5;
         expResult = -1;
@@ -45,7 +46,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #4");
+        ErrorView.display(this.getClass().getName(),"\tTest case #4");
         invest = 3000;
         days = 32;
         expResult = -1;
@@ -53,7 +54,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #5");
+        ErrorView.display(this.getClass().getName(),"\tTest case #5");
         invest = 5000;
         days = -1;
         expResult = -1;
@@ -61,7 +62,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #6");
+        ErrorView.display(this.getClass().getName(),"\tTest case #6");
         invest = 0;
         days = 31;
         expResult = -1;
@@ -69,7 +70,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #7");
+        ErrorView.display(this.getClass().getName(),"\tTest case #7");
         invest = 5000;
         days = 31;
         expResult = 13950;
@@ -83,8 +84,8 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalcStock() {
-        this.console.println("calcStock");
-        this.console.println("\tTest case #1");
+        ErrorView.display(this.getClass().getName(),"calcStock");
+        ErrorView.display(this.getClass().getName(),"\tTest case #1");
         double invest = 2000;
         double days = 3;
         InventoryControl instance = new InventoryControl();
@@ -93,7 +94,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #2");
+        ErrorView.display(this.getClass().getName(),"\tTest case #2");
         invest = 3000;
         days = -1;
         expResult = -1;
@@ -101,7 +102,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #3");
+        ErrorView.display(this.getClass().getName(),"\tTest case #3");
         invest = 1400;
         days = 5;
         expResult = -1;
@@ -109,7 +110,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #4");
+        ErrorView.display(this.getClass().getName(),"\tTest case #4");
         invest = 3000;
         days = 32;
         expResult = -1;
@@ -117,7 +118,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #5");
+        ErrorView.display(this.getClass().getName(),"\tTest case #5");
         invest = 10000;
         days = 0;
         expResult = -1;
@@ -125,7 +126,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #6");
+        ErrorView.display(this.getClass().getName(),"\tTest case #6");
         invest = 0;
         days = 31;
         expResult = -1;
@@ -133,7 +134,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
         
         
-        this.console.println("\tTest case #7");
+        ErrorView.display(this.getClass().getName(),"\tTest case #7");
         invest = 10000;
         days = 31;
         expResult = 43400;

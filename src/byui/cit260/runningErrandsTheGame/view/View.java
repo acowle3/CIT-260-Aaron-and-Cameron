@@ -6,8 +6,11 @@
 package byui.cit260.runningErrandsTheGame.view;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import runningerrandsthegame.RunningErrandsTheGame;
 
 /**
@@ -51,7 +54,11 @@ public abstract class View implements ViewInterface {
             
             this.console.println("\n" + this.displayMessage);
         
-            value = this.keyboard.readLine();
+            try {
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim();
             
             if (value.length() < 1) {            

@@ -117,7 +117,7 @@ public class GameControl {
         return inventory;
     }
 
-    public static void saveGame(Game currentGame, String filePath) {
+    public static void saveGame(Game currentGame, String filePath, String filepath, Object game) {
             throws GameControlException {
         
         try( FileOutputStream fops = new FileOutputStream(filepath)) {
