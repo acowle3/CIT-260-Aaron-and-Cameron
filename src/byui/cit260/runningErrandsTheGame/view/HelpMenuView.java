@@ -5,7 +5,9 @@
  */
 package byui.cit260.runningErrandsTheGame.view;
 
+import byui.cit260.runningErrandsTheGame.control.GameControl;
 import java.util.Scanner;
+import runningerrandsthegame.RunningErrandsTheGame;
 
 /**
  *
@@ -22,6 +24,7 @@ public class HelpMenuView {
                   + "\nG - What is the goal of the game?"
                   + "\nM - How to move"
                   + "\nE - Estimating the amount of resources"
+                  + "\nC - Enemies List"
                   + "\nQ - Quit"
                   + "\n---------------------------------------";
     }
@@ -69,6 +72,9 @@ public class HelpMenuView {
             case "E":
                 this.viewInventory();
                 break;
+            case "C":
+                this.CopyActors();
+                break;
             default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
@@ -88,5 +94,18 @@ public class HelpMenuView {
 
     void display() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void copyActors() {
+        this.console.println("\n\nEnter the file path for file where the game "
+                           + "is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.copyActors(RunningErrandsTheGame.getCurrentGame(), filePath);
+           catch (Exception ex) {
+                   ErrorView.display("Actors", ex.getMessage());
+                   }
+        }
     }
 }
